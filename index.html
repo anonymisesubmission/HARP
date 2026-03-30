@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="Human-Centric and Function-Aware Grasp Adaptation for Human-to-Robot Handover" />
+  <meta property="og:description" content="HARP: a human-centric and function-aware grasp adaptation framework for human-to-robot handover, which does not require robot motion during training." />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="human-robot interaction, handover, hand-object reconstruction">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Human-Centric and Function-Aware Grasp Adaptation for Human-to-Robot Handover</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Human-Centric and Function-Aware Grasp Adaptation for Human-to-Robot Handover</h1>
+            <!-- <div class="is-size-5 publication-authors"> -->
+              <!-- Paper authors
+              <span class="author-block">
+               <a href="https://scholar.google.com/citations?view_op=list_works&hl=zh-CN&user=J_kJRTgAAAAJ&gmla=AH8HC4wWTwnaBLApbCD6uS8sTqfTOxo6xlUgqE87BCgBim4S44lWJkAMtchRhDkqI4fhY7xJBO_gKU7ZnP_tcdsgWMjsaOsEkkhJZnWMt-U" target="_blank"> Yuekun Wu</a><sup>1</sup>,
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=xPEdLeoAAAAJ&hl=en" target="_blank">Yik Lung Pang</a><sup>1</sup>,
+              <span class="author-block">
+                <a href="https://people.epfl.ch/andrea.cavallaro?lang=en" target="_blank">Andrea Cavallaro</a><sup>2,3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="http://eecs.qmul.ac.uk/~coh/" target="_blank">Changjae Oh</a><sup>1</sup>,
+              </span>       
+            </div> -->
+
+            <!-- <div class="is-size-5 publication-authors">
+              <span class="author-block">Queen Mary University of London, UK
+            </div> -->
+            <!-- <div class="is-size-5 publication-authors">
+              <span class="author-block">Queen Mary University of London<sup>1</sup>
+                <br>Idiap Research Institute<sup>2</sup></span>
+                <br>École Polytechnique Fédérale de Lausanne<sup>3</sup></span>
+            </div> -->
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+
+                <!-- Arxiv PDF link -->
+                <!-- <span class="link-block">
+                  <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper
+                    </span>
+                  </a>
+                </span> -->
+
+                <!-- Supplementary PDF link -->
+                <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                <!-- Github link -->
+                <!-- <span class="link-block">
+                  <a href="" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span> -->
+
+                <!-- ArXiv abstract Link -->
+                <!-- <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Teaser video-->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+
+        <video 
+        class="comp_video" 
+        autoplay 
+        controls 
+        muted 
+        loop 
+        style="width: 100%; max-width: 900px; border-radius: 10px;">
+        
+        <source src="videos/video-all.mp4" type="video/mp4">
+      </video>
+
+        
+
+        <h2 class="subtitle has-text-centered">
+          We propose a framework to adapt human-preferred and object-function-aware grasping for human-to-robot handovers using simple human demonstrations.
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+
+  <!-- <section class="section">
+    <div class="container is-max-desktop">
+      
+      <div class="columns is-centered">
+        <div class="column is-10">
+  
+          <h2 class="title is-3 has-text-centered">Abstract</h2>
+  
+          <div class="content has-text-justified">
+            <p>
+              Most robotic grasping  methods are object-centric and do not consider human preferences or object affordances in human-to-robot handovers. 
+              Collecting human-to-robot grasping data in real world is time consuming and potentially unsafe due to robot motion during close human-robot interaction.
+              Motivated by the observation that humans can naturally hand objects to a stationary robot, we eliminate the need for robot-moving data collection, enabling safe, low-cost acquisition of human-aligned grasp data, even under uncommon hand poses and object.
+              To address these challenges, we propose a framework to adapt human-preferred and object-function-aware grasping for human-to-robot handovers using simple human demonstrations. 
+              First, we introduce a robot-motion-free data collection where human naturally hands objects to a stationary robot gripper.  Therefore address the costly, time-consuming, and unsafe nature of data collection, and enables easy and safe acquisition of affordance-aware and human-intent-aware grasping data.
+              Building on the demonstration, we propose a lightweight handover grasp adaptation model that jointly models human hand and object to generate human-aware and affordance-aware grasps. It can overcome the limitations of object-centric grasping which neglect object affordances and human preferences within 2 minutes training per object.
+              Our method is plug-and-play and can be integrated into existing human-to-robot handover frameworks, requiring only the hand pointcloud and the textured object mesh as input.
+              Experiments demonstrate improved grasp success, interaction naturalness, user feelings and handling of uncommon objects and poses in real-world H2R handover.
+            </p>
+          </div>
+  
+          <div class="columns is-centered">
+            <img src="static/images/abs.png" width="100%" />
+          </div>
+  
+        </div>
+      </div>
+  
+    </div>
+  </section> -->
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Most robotic grasping  methods are object-centric and do not consider human preferences or object affordances in human-to-robot handovers. 
+              Collecting human-to-robot grasping data in real world is time consuming and potentially unsafe due to robot motion during close human-robot interaction.
+              Motivated by the observation that humans can naturally hand objects to a stationary robot, we eliminate the need for robot-moving data collection, enabling safe, low-cost acquisition of human-aligned grasp data, even under uncommon hand poses and object.
+              To address these challenges, we propose a framework to adapt human-preferred and object-function-aware grasping for human-to-robot handovers using simple human demonstrations. 
+              First, we introduce a robot-motion-free data collection where human naturally hands objects to a stationary robot gripper.  Therefore address the costly, time-consuming, and unsafe nature of data collection, and enables easy and safe acquisition of affordance-aware and human-intent-aware grasping data.
+              Building on the demonstration, we propose a lightweight handover grasp adaptation model that jointly models human hand and object to generate human-aware and affordance-aware grasps. It can overcome the limitations of object-centric grasping which neglect object affordances and human preferences within 2 minutes training per object.
+              Our method is plug-and-play and can be integrated into existing human-to-robot handover frameworks, requiring only the hand pointcloud and the textured object mesh as input.
+              Experiments demonstrate improved grasp success, interaction naturalness, user feelings and handling of uncommon objects and poses in real-world H2R handover.
+            </p>
+          </div>
+          <div class="columns is-centered">
+            <img src="static/images/abs.png" alt="Overview of the proposed method" width="100%" class="center-image" />
+          </div>
+          <div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop has-text-centered">
+      
+      <h2 class="title is-3">Video Summary</h2>
+  
+      <div class="hero-body" style="display: flex; justify-content: center;">
+        <video 
+          autoplay 
+          controls 
+          muted 
+          loop 
+          style="width: 100%; max-width: 900px; border-radius: 12px;">
+          
+          <source src="videos/video-4.mp4" type="video/mp4">
+        </video>
+      </div>
+  
+    </div>
+  </section>
+
+
+  </section>
+
+  <section class="section is-small">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <div class="content">
+            <h2 class="title is-3">HARP Pipeline</h2>
+            <div class="level-set has-text-justified">
+              <p>
+                Overview of our motion-free data collection and handover grasp generation. (a) In the offline stage, reference RGB-D images are used to reconstruct a textured object mesh via BundleSDF. 
+              In the online stage, a human naturally hands the object to a stationary robot while a fixed side-mounted RGB-D camera captures the process. 
+              Note that the robot arm remains stationary.
+              Hand and object masks are extracted, the hand pointcloud is reconstructed, and the object pose is estimated using FoundationPose. The gripper pose and hand pointcloud are then transformed into the object coordinate frame. Finally, we obtain the demonstrated grasp pose label and corresponding hand pointcloud in real-time. (b) We then present a grasp adaptation model that encodes the hand pointcloud $P_h$ and object mesh $M_o$ using PointNet and a mlp layer. The grasp candidates are generated by 6-DoF GraspNet and encodes by a mlp layer. A Hand Proximity Prior (HPP) models the spatial relationship between the hand and each grasp candidate. All features are then fused to predict a score for each grasp candidate, and the highest-scoring grasp is selected for the handover task.
+              </p>
+            </div>
+          </div>
+          <div class="columns is-centered">
+            <img src="static/images/overview.png" alt="Method overview" width="100%" class="center-image" />
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+  <section class="section is-small">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <div class="content">
+            <h2 class="title is-3">Human-to-robot handover pipeline integrated with HARP.</h2>
+            <div class="level-set has-text-justified">
+              <p>
+                A fixed RGB-D camera captures the approaching scene, and we extract hand–object masks.
+                The object pose $T_{obj}^{cam}$ is estimated using FoundationPose and the hand pointcloud $P_{h}^{o}$ is reconstructed from the depth image and transformed to the object coordinate.
+                HARP use the hand pointcloud and pre-prepared object mesh to predict the grasp pose $G$. The grasp pose $G$ is transformed to robot base coordinate with object pose $T_{obj}^{cam}$ and camera extrinsics $T_{cam}^{rob}$.
+                The robot use the grasp pose $G^{'}$ and moves to a pre-grasp pose and performs closed-loop grasping before delivering the object to a predefined location.
+              </p>
+            </div>
+          </div>
+          <div class="columns is-centered">
+            <img src="static/images/h2rpipeline.png" alt="Method overview" width="100%" class="center-image" />
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section class="hero section is-small is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <div class="content">
+            <h2 class="title is-3">Robot Setup</h2>
+            <div class="level-set has-text-justified">
+              <p>
+              For real-robot experiments, we use a UR5 robotic arm with Robotiq 2F-85 2-finger gripper and a side-mounted Intel Realsense D435i camera, and a participant holding a object (left). To evaluate the model's performance, we use 9 adapted objects including objects with strong functional grasp affordances, objects difficult to grasp, and more common objects in real-robot handover experiments (right).
+               
+              </p>
+            </div>
+          </div>
+          <div class="columns is-centered">
+            <img src="static/images/setup.png" alt="Robot setup" width="50%" class="center-image" />
+          </div>
+        </div>
+      </div>
+  </section>
+
+    <!-- <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h2 class="title is-3">Real-robot experiments (2× speed)</h2>
+
+        <div class="video-container">
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video4.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video6.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="level-set has-text-justified">
+          <div class="container has-text-centered subtitle">
+          </div>
+        </div>
+        <div class="video-container">
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video7.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video8.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video9.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video10.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        
+        <h2 class="title is-3">Comparison with Baseline (Playback at 2× Speed)</h2>
+  
+        <p class="subtitle has-text-centered" style="max-width: 900px; margin: auto;">
+          We compare HARP against a widely used grasping method for human-to-robot handover,
+          referred to as <b>GraspNet-CF</b>, which combines a 6-DoF object-centric grasping network
+          with a collision-free filtering strategy. The evaluation is conducted under the same
+          handover pipeline, where only the grasp adaptation module is replaced.
+        </p>
+  
+        <!-- 🎥 Video -->
+        <div style="display: flex; justify-content: center; margin-top: 20px;">
+          <video 
+            class="comp_video" 
+            autoplay 
+            controls 
+            muted 
+            loop 
+            style="width: 100%; max-width: 900px; border-radius: 12px;">
+            <source src="videos/video-compare.mp4" type="video/mp4">
+          </video>
+        </div>
+  
+        <!-- 🖼️ Click-to-switch image -->
+        <div class="columns is-centered" style="margin-top: 30px;">
+          <img id="compareImg"
+               src="static/images/compare1.png"
+               alt="Comparison"
+               width="40%"
+               class="center-image"
+               style="cursor: pointer; border-radius: 10px;" />
+        </div>
+  
+        <p style="font-size:14px; margin-top:10px;">
+          Click image to switch comparison
+        </p>
+  
+      </div>
+    </div>
+  </section>
+
+
+  <!-- <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        
+        <h2 class="title is-3">(Comparison between previous method, 2× speed)</h2>
+        <h2 class="subtitle has-text-centered">
+          We compare HARP against a widely used grasping method for human-to-robot handover, which combines 6-DoF object-centric grasping network with a collision-free filtering strategy~\cite{pang2025stereo,yang2021reactive}. For clarity, we refer to this baseline as GraspNet-CF, which builds upon 6-DoF GraspNet. For each predicted grasp, a 3D bounding box corresponding to the gripper geometry is constructed, and grasps whose bounding boxes intersect with points from the hand pointcloud ${P}_H$ are discarded. 
+          We evaluated HARP and GraspNet-CF on the collected test set. Also, we conducted real-world human-to-robot handover experiments and evaluate HARP and GraspNet-CF under the same handover pipeline, where only the grasp adaptation module is replaced in GraspNet-CF while all other components remain identical.
+          
+        </h2>
+        <video 
+          class="comp_video" 
+          autoplay 
+          controls 
+          muted 
+          loop 
+          style="width: 100%; max-width: 900px; border-radius: 10px;">
+          
+          <source src="videos/video-compare.mp4" type="video/mp4">
+        </video>
+        <div class="columns is-centered">
+          <img src="static/images/compare.png" alt="Comparison" width="50%" class="center-image" />
+        </div>
+  
+      </div>
+    </div>
+  </section> -->
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        
+        <h2 class="title is-3">Human-to-robot handover results (proposed method, 2× speed)</h2>
+  
+        <video 
+          class="comp_video" 
+          autoplay 
+          controls 
+          muted 
+          loop 
+          style="width: 100%; max-width: 900px; border-radius: 10px;">
+          
+          <source src="videos/video-all.mp4" type="video/mp4">
+        </video>
+  
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h2 class="title is-3">Real-robot experiments (2× speed)</h2>
+
+        <div class="video-container">
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video4.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video6.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="level-set has-text-justified">
+          <div class="container has-text-centered subtitle">
+          </div>
+        </div>
+        <div class="video-container">
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video7.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video8.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video9.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video10.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+<!-- 
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h2 class="title is-3">Simulation experiments</h2>
+        <div class="level-set has-text-justified">
+          <div class="container has-text-centered subtitle">
+            Seen colors and objects
+          </div>
+        </div>
+        <div class="video-container">
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="static/videos/sim-seen-01.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="static/videos/sim-seen-02.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="static/videos/sim-seen-03.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="static/videos/sim-seen-04.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="level-set has-text-justified">
+          <div class="container has-text-centered subtitle">
+            <br> 
+            Unseen colors and objects
+          </div>
+        </div>
+        <div class="video-container">
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="static/videos/sim-unseen-01.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="static/videos/sim-unseen-02.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="static/videos/sim-unseen-03.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="static/videos/sim-unseen-04.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="hero section is-small ">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <div class="content">
+            <h2 class="title is-3">Affordance Prediction</h2>
+            <div class="level-set has-text-justified">
+              <p>
+                Affordances predictions for both pick and place. DiffPort is able to generate affordance predictions and
+                localize objects without using any explicit object representations (e.g., object detections and
+                segmentation)
+              </p>
+            </div>
+          </div>
+          <div class="columns is-centered">
+            <img src="static/images/affordance.jpg" alt="Reconstruction pipeline" width="100%" class="center-image" />
+          </div>
+        </div>
+      </div>
+  </section> -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the
+              footer. <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
