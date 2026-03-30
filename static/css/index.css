@@ -158,3 +158,29 @@ body {
   object-fit: cover;  /* 保持填满且裁剪 */
   border-radius: 10px;
 }
+
+
+/* 强制让特定的视频容器突破 Bulma 的 container 限制 */
+.full-width-video-container {
+  width: 100% !important;
+  max-width: 1200px !important; /* 你可以根据喜好调成 1400px */
+  margin: 20px auto !important;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* 确保 iframe 始终保持 16:9 比例 */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
