@@ -42,8 +42,12 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
+  <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"> -->
+  <!-- <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/auto-render.min.js" onload="renderMathInElement(document.body);"></script> -->
 
 </head>
 
@@ -157,6 +161,36 @@
   <!-- End teaser video -->
 
 
+  <!-- <section class="section">
+    <div class="container is-max-desktop">
+      
+      <div class="columns is-centered">
+        <div class="column is-10">
+  
+          <h2 class="title is-3 has-text-centered">Abstract</h2>
+  
+          <div class="content has-text-justified">
+            <p>
+              Most robotic grasping  methods are object-centric and do not consider human preferences or object affordances in human-to-robot handovers. 
+              Collecting human-to-robot grasping data in real world is time consuming and potentially unsafe due to robot motion during close human-robot interaction.
+              Motivated by the observation that humans can naturally hand objects to a stationary robot, we eliminate the need for robot-moving data collection, enabling safe, low-cost acquisition of human-aligned grasp data, even under uncommon hand poses and object.
+              To address these challenges, we propose a framework to adapt human-preferred and object-function-aware grasping for human-to-robot handovers using simple human demonstrations. 
+              First, we introduce a robot-motion-free data collection where human naturally hands objects to a stationary robot gripper.  Therefore address the costly, time-consuming, and unsafe nature of data collection, and enables easy and safe acquisition of affordance-aware and human-intent-aware grasping data.
+              Building on the demonstration, we propose a lightweight handover grasp adaptation model that jointly models human hand and object to generate human-aware and affordance-aware grasps. It can overcome the limitations of object-centric grasping which neglect object affordances and human preferences within 2 minutes training per object.
+              Our method is plug-and-play and can be integrated into existing human-to-robot handover frameworks, requiring only the hand pointcloud and the textured object mesh as input.
+              Experiments demonstrate improved grasp success, interaction naturalness, user feelings and handling of uncommon objects and poses in real-world H2R handover.
+            </p>
+          </div>
+  
+          <div class="columns is-centered">
+            <img src="static/images/abs.png" width="100%" />
+          </div>
+  
+        </div>
+      </div>
+  
+    </div>
+  </section> -->
 
   <!-- Paper abstract -->
   <section class="section hero is-light">
@@ -187,6 +221,49 @@
   </section>
   <!-- End paper abstract -->
 
+ 
+  <!-- <section class="hero teaser">
+    <div class="hero-body has-text-centered">
+      
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Video Summary</h2>
+      </div>
+  
+      <div class="full-width-video-container">
+        <div class="video-wrapper">
+          <iframe 
+            src="https://www.youtube.com/embed/MAnledI2oeQ?autoplay=1&mute=1&loop=1&playlist=MAnledI2oeQ" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+            style="border: none;">
+          </iframe>
+        </div>
+      </div>
+      
+    </div>
+  </section> -->
+  <!-- <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          
+          <h2 class="title is-3">Video Summary</h2>
+  
+          <div style="width: 100%; margin-top: 20px;">
+            <div style="position: relative; width: 100%; aspect-ratio: 16 / 9;">
+              <iframe 
+                src="https://www.youtube.com/embed/MAnledI2oeQ?autoplay=1&mute=1&loop=1&playlist=MAnledI2oeQ" 
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: none;"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section> -->
 
 
   <section class="section is-small">
@@ -276,8 +353,64 @@
       </div>
   </section>
 
- 
-  <!-- <section class="hero section is-small is-light">
+    <!-- <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h2 class="title is-3">Real-robot experiments (2× speed)</h2>
+
+        <div class="video-container">
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video4.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video6.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="level-set has-text-justified">
+          <div class="container has-text-centered subtitle">
+          </div>
+        </div>
+        <div class="video-container">
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video7.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video8.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video9.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video10.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  
+  <section class="hero section is-small is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-full">
@@ -294,6 +427,46 @@
             </div>
           </div>
           <!-- 🎥 Video -->
+        <div style="text-align: center; margin-top: 20px;">
+          <img 
+            src="./videos/video-compare.gif" 
+            style="width: 100%; max-width: 900px; border-radius: 12px;"
+            alt="Comparison Video">
+        </div>
+
+  
+        <!-- 🖼️ Click-to-switch image -->
+        <div class="columns is-centered" style="margin-top: 30px;">
+          <img id="compareImg"
+               src="static/images/compare1.png"
+               alt="Comparison"
+               width="40%"
+               class="center-image"
+               style="cursor: pointer; border-radius: 10px;" />
+        </div>
+  
+        <p style="font-size:14px; margin-top:10px;">
+          Click image to switch comparison
+        </p>
+        </div>
+      </div>
+  </section>
+
+
+  <!-- <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        
+        <h2 class="title is-3">Comparison with Baseline (Playback at 2× Speed)</h2>
+  
+        <p class="subtitle has-text-centered" style="max-width: 900px; margin: auto;">
+          We compare HARP against a widely used grasping method for human-to-robot handover,
+          referred to as <b>GraspNet-CF</b>, which combines a 6-DoF object-centric grasping network
+          with a collision-free filtering strategy. The evaluation is conducted under the same
+          handover pipeline, where only the grasp adaptation module is replaced.
+        </p>
+  
+        🎥 Video -->
         <!-- <div style="text-align: center; margin-top: 20px;">
           <img 
             src="./videos/video-compare.gif" 
@@ -315,48 +488,39 @@
         <p style="font-size:14px; margin-top:10px;">
           Click image to switch comparison
         </p>
-        </div>
-      </div>
-  </section> --> -->
-
-  <section class="section"> <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full">
-        <div class="content">
-          <h2 class="title is-3">Comparison with Baseline (Playback at 2× Speed)</h2>
-          <div class="level-set has-text-justified">
-            <p>
-              We compare HARP against a widely used grasping method for human-to-robot handover,
-              referred to as <b>GraspNet-CF</b>, which combines a 6-DoF object-centric grasping network
-              with a collision-free filtering strategy. The evaluation is conducted under the same
-              handover pipeline, where only the grasp adaptation module is replaced.
-            </p>
-          </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 30px;">
-          <img 
-            src="./videos/video-compare.gif" 
-            style="width: 100%; border-radius: 12px;"
-            alt="Comparison Video">
-        </div>
-
-        <div class="columns is-centered" style="margin-top: 30px;">
-          <div class="column is-half"> <img id="compareImg"
-                 src="static/images/compare1.png"
-                 alt="Comparison"
-                 style="cursor: pointer; border-radius: 10px; width: 100%;" />
-            <p style="font-size:14px; margin-top:10px; color: #888;">
-              Click image to switch comparison
-            </p>
-          </div>
-        </div>
-
+  
       </div>
     </div>
-  </div>
-</section>
- 
+  </section> -->
+
+
+  <!-- <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        
+        <h2 class="title is-3">(Comparison between previous method, 2× speed)</h2>
+        <h2 class="subtitle has-text-centered">
+          We compare HARP against a widely used grasping method for human-to-robot handover, which combines 6-DoF object-centric grasping network with a collision-free filtering strategy~\cite{pang2025stereo,yang2021reactive}. For clarity, we refer to this baseline as GraspNet-CF, which builds upon 6-DoF GraspNet. For each predicted grasp, a 3D bounding box corresponding to the gripper geometry is constructed, and grasps whose bounding boxes intersect with points from the hand pointcloud ${P}_H$ are discarded. 
+          We evaluated HARP and GraspNet-CF on the collected test set. Also, we conducted real-world human-to-robot handover experiments and evaluate HARP and GraspNet-CF under the same handover pipeline, where only the grasp adaptation module is replaced in GraspNet-CF while all other components remain identical.
+          
+        </h2>
+        <video 
+          class="comp_video" 
+          autoplay 
+          controls 
+          muted 
+          loop 
+          style="width: 100%; max-width: 900px; border-radius: 10px;">
+          
+          <source src="videos/video-compare.mp4" type="video/mp4">
+        </video>
+        <div class="columns is-centered">
+          <img src="static/images/compare.png" alt="Comparison" width="50%" class="center-image" />
+        </div>
+  
+      </div>
+    </div>
+  </section> -->
 
   <section class="hero is-small">
     <div class="hero-body">
@@ -375,7 +539,149 @@
     </div>
   </section>
 
-  
+  <!-- <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h2 class="title is-3">Real-robot experiments (2× speed)</h2>
+
+        <div class="video-container">
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video4.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video6.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="level-set has-text-justified">
+          <div class="container has-text-centered subtitle">
+          </div>
+        </div>
+        <div class="video-container">
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video7.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video8.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video9.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="videos/html-video10.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+<!-- 
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h2 class="title is-3">Simulation experiments</h2>
+        <div class="level-set has-text-justified">
+          <div class="container has-text-centered subtitle">
+            Seen colors and objects
+          </div>
+        </div>
+        <div class="video-container">
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="static/videos/sim-seen-01.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="static/videos/sim-seen-02.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="static/videos/sim-seen-03.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="static/videos/sim-seen-04.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="level-set has-text-justified">
+          <div class="container has-text-centered subtitle">
+            <br> 
+            Unseen colors and objects
+          </div>
+        </div>
+        <div class="video-container">
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="static/videos/sim-unseen-01.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="static/videos/sim-unseen-02.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="static/videos/sim-unseen-03.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video class="comp_video" poster="" id="tree" autoplay controls muted loop>
+              <source src="static/videos/sim-unseen-04.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="hero section is-small ">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <div class="content">
+            <h2 class="title is-3">Affordance Prediction</h2>
+            <div class="level-set has-text-justified">
+              <p>
+                Affordances predictions for both pick and place. DiffPort is able to generate affordance predictions and
+                localize objects without using any explicit object representations (e.g., object detections and
+                segmentation)
+              </p>
+            </div>
+          </div>
+          <div class="columns is-centered">
+            <img src="static/images/affordance.jpg" alt="Reconstruction pipeline" width="100%" class="center-image" />
+          </div>
+        </div>
+      </div>
+  </section> -->
+
 
   <footer class="footer">
     <div class="container">
