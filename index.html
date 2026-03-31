@@ -410,7 +410,50 @@
     </div>
   </section> -->
 
-  <section class="hero is-small">
+  <section class="hero section is-small is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <div class="content">
+            <h2 class="title is-3">Comparison with Baseline (Playback at 2× Speed)</h2>
+            <div class="level-set has-text-justified">
+              <p>
+                We compare HARP against a widely used grasping method for human-to-robot handover,
+                referred to as <b>GraspNet-CF</b>, which combines a 6-DoF object-centric grasping network
+                with a collision-free filtering strategy. The evaluation is conducted under the same
+                handover pipeline, where only the grasp adaptation module is replaced.
+               
+              </p>
+            </div>
+          </div>
+          <!-- 🎥 Video -->
+        <div style="text-align: center; margin-top: 20px;">
+          <img 
+            src="./videos/video-compare.gif" 
+            style="width: 100%; max-width: 900px; border-radius: 12px;"
+            alt="Comparison Video">
+        </div>
+
+  
+        <!-- 🖼️ Click-to-switch image -->
+        <div class="columns is-centered" style="margin-top: 30px;">
+          <img id="compareImg"
+               src="static/images/compare1.png"
+               alt="Comparison"
+               width="40%"
+               class="center-image"
+               style="cursor: pointer; border-radius: 10px;" />
+        </div>
+  
+        <p style="font-size:14px; margin-top:10px;">
+          Click image to switch comparison
+        </p>
+        </div>
+      </div>
+  </section>
+
+
+  <!-- <section class="hero is-small">
     <div class="hero-body">
       <div class="container has-text-centered">
         
@@ -448,7 +491,7 @@
   
       </div>
     </div>
-  </section>
+  </section> -->
 
 
   <!-- <section class="hero is-small">
