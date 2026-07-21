@@ -207,14 +207,14 @@
           <h2 class="title is-3 has-text-centered">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Most robotic grasping  methods are object-centric and do not consider human preferences or object affordances in human-to-robot handovers. 
-              Collecting human-to-robot grasping data in real world is time consuming and potentially unsafe due to robot motion during close human-robot interaction.
-              Motivated by the observation that humans can naturally hand objects to a stationary robot, we eliminate the need for robot-moving data collection, enabling safe, low-cost acquisition of human-aligned grasp data, even under uncommon hand poses and object.
-              To address these challenges, we propose a framework to adapt human-preferred and object-function-aware grasping for human-to-robot handovers using simple human demonstrations. 
-              First, we introduce a robot-motion-free data collection where human naturally hands objects to a stationary robot gripper.  Therefore address the costly, time-consuming, and unsafe nature of data collection, and enables easy and safe acquisition of affordance-aware and human-intent-aware grasping data.
-              Building on the demonstration, we propose a lightweight handover grasp adaptation model that jointly models human hand and object to generate human-aware and affordance-aware grasps. It can overcome the limitations of object-centric grasping which neglect object affordances and human preferences within 2 minutes training per object.
-              Our method is plug-and-play and can be integrated into existing human-to-robot handover frameworks, requiring only the hand pointcloud and the textured object mesh as input.
-              Experiments demonstrate improved grasp success, interaction naturalness, user feelings and handling of uncommon objects and poses in real-world human-to-robot handover.
+              Most robotic grasping techniques are object-centric and do not account for the spatial coordination required in human-to-robot (H2R) handovers.
+              Existing H2R handover approaches extend object-centric grasping through various strategies, but they often neglect human preference and object function-awareness.
+              Collecting diverse H2R grasping data can directly fill this gap, but data collection in the real world is costly, time-consuming, and potentially unsafe due to robot motion in close proximity to humans.
+              To address these challenges, we propose a framework to rapidly and safely collect human-like, function-aware grasps for H2R handovers and learn to improve human preference and function-awareness of generated grasps. 
+              Our data collection method captures H2R handover demonstrations by instructing humans to naturally hand objects to a stationary robot gripper. 
+              Building on the collected demonstrations without robot movements, we present a lightweight handover grasp adaptation model that jointly models the human hand and object to generate grasps within a two-minute training per object.
+              Our method can be integrated into existing H2R handover frameworks, requiring only the hand pointcloud and the textured object mesh as input.
+              Experiments demonstrate improved grasp success, interaction naturalness, human perceptual scores for grasping naturalness and safety, and handling of uncommon objects and poses in real-world H2R handovers.
             </p>
           </div>
           <div class="columns is-centered">
