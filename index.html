@@ -95,7 +95,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Human-Centric and Function-Aware Grasp Adaptation for Human-to-Robot Handover</h1>
+            <h1 class="title is-1 publication-title">Demonstration-Guided Grasp Adaptation for Human-to-Robot Handovers</h1>
             <!-- <div class="is-size-5 publication-authors"> -->
               <!-- Paper authors
               <span class="author-block">
@@ -189,7 +189,7 @@
         
 
         <h2 class="subtitle has-text-centered">
-          We propose a framework to adapt human-preferred and object-function-aware grasping for human-to-robot handovers using simple human demonstrations.
+          we present a method that collects human-demonstrated grasps for H2R handovers by instructing humans to naturally hand objects to a stationary robot gripper and adapt a grasp gener- ation method to produce grasps aligned with human handover demonstrations. 
         </h2>
       </div>
     </div>
@@ -207,14 +207,7 @@
           <h2 class="title is-3 has-text-centered">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Most robotic grasping techniques are object-centric and do not account for the spatial coordination required in human-to-robot (H2R) handovers.
-              Existing H2R handover approaches extend object-centric grasping through various strategies, but they often neglect human preference and object function-awareness.
-              Collecting diverse H2R grasping data can directly fill this gap, but data collection in the real world is costly, time-consuming, and potentially unsafe due to robot motion in close proximity to humans.
-              To address these challenges, we propose a framework to rapidly and safely collect human-like, function-aware grasps for H2R handovers and learn to improve human preference and function-awareness of generated grasps. 
-              Our data collection method captures H2R handover demonstrations by instructing humans to naturally hand objects to a stationary robot gripper. 
-              Building on the collected demonstrations without robot movements, we present a lightweight handover grasp adaptation model that jointly models the human hand and object to generate grasps within a two-minute training per object.
-              Our method can be integrated into existing H2R handover frameworks, requiring only the hand pointcloud and the textured object mesh as input.
-              Experiments demonstrate improved grasp success, interaction naturalness, human perceptual scores for grasping naturalness and safety, and handling of uncommon objects and poses in real-world H2R handovers.
+              Existing human-to-robot (H2R) handover approaches extend object-centric grasping through various strategies to ensure human safety. However, they often neglect the influence of the giver’s object presentation on grasp-region suitability, potentially resulting in unsuccessful or unstable robot grasps. Addressing this problem through H2R handover data collection in the real world is costly, time-consuming, and potentially unsafe to humans. To address these challenges, we present a method that collects human-demonstrated grasps for H2R handovers by instructing humans to naturally hand objects to a stationary robot gripper and adapt a grasp generation method to produce grasps aligned with human handover demonstrations. Our data collection method enables rapid and safe collection of H2R handover demonstrations. Building on the collected demonstrations, we present a lightweight per-object grasp adaptation model that jointly models the human hand and object to generate grasps from just two minutes of training per object. Our method can be integrated into existing H2R handover frameworks, requiring only the hand pointcloud and the textured object mesh as input. Experiments demonstrate improved grasp success, strong alignment with human demonstrations, higher human perceptual scores for grasping naturalness and safety, and effective adaptation on objects with challenging geometries in real-world H2R handovers.
             </p>
           </div>
           <div class="columns is-centered">
