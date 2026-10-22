@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+<meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
   <meta name="description" content="DESCRIPTION META TAG">
@@ -36,46 +35,172 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
-  <link rel="stylesheet" href="static/css/index.css">
 
-  <style>
-    /* ===== 背景分区 ===== */
-    .section-alt-1 {
-      background-color: #fafafa;
-    }
-
-    .section-alt-2 {
-      background-color: #f7f9fc;
-    }
-
-    .section-alt-3 {
-      background-color: #f9f8ff;
-    }
-
-    /* ===== 卡片效果 ===== */
-    .card-like {
-      background: white;
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-    }
-
-    /* ===== 间距优化 ===== */
-    .section {
-      padding-top: 3rem;
-      padding-bottom: 3rem;
-    }
-
-    /* ===== 图片微动效 ===== */
-    img {
-      transition: transform 0.2s ease;
-    }
-
-    img:hover {
-      transform: scale(1.01);
-    }
-  </style>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #172539;
+    --muted: #627184;
+    --muted-light: #a8bbcc;
+    --paper: #f6f8fa;
+    --surface: #ffffff;
+    --line: #e4eaf0;
+    --navy: #071a2c;
+    --navy-2: #10314a;
+    --accent: #2a9c94;
+    --mint: #9de0d5;
+    --blue: #c1d9fb;
+    --shadow: 0 22px 65px rgba(14, 43, 64, .065);
+    --radius: 22px;
+    --container: 1140px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 82px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', 'Google Sans', 'Noto Sans', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a { color: inherit; }
+  img { display: block; height: auto; max-width: 100%; }
+  .site-width { width: min(var(--container), calc(100% - 88px)); margin-inline: auto; }
+  .masthead {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background: radial-gradient(ellipse 95% 100% at 96% 18%, #1e4861 0%, transparent 58%),
+                linear-gradient(118deg, #061523 4%, #09243b 61%, #12374c 100%);
+    color: #f5fbff;
+  }
+  .masthead::before {
+    position: absolute;
+    content: '';
+    pointer-events: none;
+    z-index: -1;
+    top: 3%; right: -20%; width: 67vw; height: 67vw;
+    border: 1px solid rgba(183, 228, 229, .105);
+    border-radius: 50%;
+    box-shadow: 0 0 0 95px rgba(183, 228, 229, .028), 0 0 0 190px rgba(183, 228, 229, .025);
+  }
+  .masthead::after {
+    position: absolute; content: ''; pointer-events: none; inset: 0;
+    z-index: -1; opacity: .18;
+    background-image: linear-gradient(rgba(208,238,244,.12) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(208,238,244,.12) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(90deg, transparent 15%, black 95%);
+  }
+  .topbar { border-bottom: 1px solid rgba(220, 247, 250, .12); }
+  .nav-inner { min-height: 74px; display:flex; align-items:center; justify-content:space-between; gap:26px; }
+  .brand { font: 800 22px/1 'Manrope', sans-serif; letter-spacing: -.055em; color: #fff; text-decoration:none; }
+  .brand-dot { color: #8be5d7; }
+  .nav-links { display:flex; align-items:center; flex-wrap:wrap; justify-content:flex-end; gap: clamp(16px, 2.8vw, 36px); }
+  .nav-links a { color:#c5d5e1; text-decoration: none; font-size:12px; font-weight:700; letter-spacing:.08em; transition: color .18s; }
+  .nav-links a:hover, .nav-links a:focus-visible { color:#a7f2e3; }
+  .nav-links .nav-outline { color:#def9f5; border:1px solid rgba(173,233,224,.38); border-radius:99px; padding:10px 17px; }
+  .hero-content { display:grid; grid-template-columns: minmax(0,1fr) minmax(0,.99fr); gap:clamp(24px,4vw,66px); align-items:center; padding-block: 99px 108px; }
+  .eyebrow { display:flex; align-items:center; gap:10px; font-size:11px; font-weight:800; letter-spacing:.19em; text-transform:uppercase; color:#92dacf; }
+  .eyebrow::before { content:''; display:block; height:1px; width:28px; background:#80d7ca; }
+  .hero-copy h1 { font-family: 'Manrope', 'DM Sans', sans-serif; font-size:clamp(35px,3.65vw,57px); font-weight:800; letter-spacing:-.057em; line-height:1.15; margin:23px 0 24px; max-width:680px; color:#fff; }
+  .hero-copy h1 .emphasis { color:#b1ede3; }
+  .hero-intro { color:#bdccda; font-size:clamp(14px,1.25vw,16px); line-height:1.85; max-width:550px; margin:0; }
+  .hero-rule { height:1px; background:linear-gradient(90deg,rgba(159,229,216,.65),rgba(159,229,216,0)); margin-top:35px; max-width:150px; }
+  .hero-visual { min-width:0; transform:translateY(9px); }
+  .visual-shell { padding:11px; border:1px solid rgba(200,238,242,.23); border-radius:19px; background:rgba(255,255,255,.055); box-shadow:0 35px 80px rgba(0,0,0,.3); }
+  .visual-top { display:flex; gap:6px; align-items:center; height:30px; padding:0 6px 11px; }
+  .visual-top i { width:6px; height:6px; display:block; border-radius:50%; background:rgba(210,232,236,.55); }
+  .visual-top span { margin-left:auto; font-size:10px; text-transform:uppercase; letter-spacing:.14em; color:#a7bacb; }
+  .hero-gif { width:100%; border-radius:10px; background:#e4eaed; object-fit:contain; }
+  .shell-caption { color:#a6bdca; font-size:11px; letter-spacing:.14em; text-transform:uppercase; padding:16px 7px 5px; }
+  .page-content { overflow:hidden; }
+  .block-section { padding:clamp(64px,7.5vw,112px) 0; position:relative; }
+  .section-white { background:#fff; }
+  .section-soft { background:#f5f8fa; }
+  .section-blue { background:#eef4f7; }
+  .section-head { margin-bottom:28px; }
+  .section-index { color:var(--accent); font-size:11px; text-transform:uppercase; font-weight:800; letter-spacing:.2em; margin-bottom:13px; }
+  .section-title { font-family:'Manrope',sans-serif; font-size:clamp(27px,3vw,39px); line-height:1.21; letter-spacing:-.048em; font-weight:800; color:#10263a; margin:0; max-width:920px; }
+  .section-title:after { content:''; width:40px; height:3px; display:block; margin-top:19px; background:#56bcae; border-radius:10px; }
+  .prose { color:#4a5c6c; font-size:15.3px; line-height:1.98; max-width:900px; }
+  .prose p { margin:0; }
+  .prose b, .prose strong { color:#183448; }
+  .abstract-prose { max-width:930px; color:#364b5d; font-size:16px; }
+  .paper-frame { background:#fff; border:1px solid var(--line); box-shadow:var(--shadow); border-radius:var(--radius); padding:clamp(16px,3vw,36px); margin-top:34px; }
+  .paper-frame img { width:100%; object-fit:contain; }
+  .large-figure { margin-top:38px; }
+  .feature-grid { display:grid; grid-template-columns: minmax(0,1fr) minmax(0,1.2fr); gap:clamp(32px,6vw,85px); align-items:start; }
+  .feature-grid .section-head { margin-bottom:24px; }
+  .feature-grid .prose { font-size:14.7px; line-height:1.95; }
+  .feature-grid .paper-frame { margin-top:0; }
+  .feature-grid.figure-left { grid-template-columns: minmax(0,1.16fr) minmax(0,1fr); }
+  .feature-grid.figure-left .figure-col { order:-1; }
+  .video-section { background:var(--navy); color:white; }
+  .video-section .section-title { color:#f2fbff; }
+  .video-section .section-index { color:#9de0d5; }
+  .video-note { color:#95adbd; font-size:12px; letter-spacing:.14em; text-transform:uppercase; margin-bottom:17px; }
+  .video-box { width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:20px; background:#0c1721; border:1px solid rgba(214,242,244,.19); box-shadow:0 30px 85px rgba(0,0,0,.25); margin-top:34px; }
+  .video-box iframe { display:block; width:100%; height:100%; border:0; }
+  .media-stage { background:#fff; border:1px solid #e0e8ed; padding:clamp(9px,1.6vw,17px); border-radius:20px; box-shadow:var(--shadow); }
+  .media-stage img { width:100%; border-radius:12px; background:#f0f3f4; }
+  .media-stage + .media-stage { margin-top:24px; }
+  .media-stage img.hoverable { transition:filter .2s ease, transform .2s ease; cursor:pointer; }
+  .media-stage img.hoverable:hover { filter:brightness(.975); }
+  .comparison-layout { display:grid; grid-template-columns:minmax(0,1.5fr) minmax(240px,.8fr); gap:27px; align-items:start; margin-top:40px; }
+  .click-caption { font-size:12px; color:#718396; line-height:1.6; text-align:center; margin:13px 0 2px; }
+  .results-section { background:linear-gradient(180deg,#0a1e30,#102c41); }
+  .results-section .section-title { color:#f6fbff; }
+  .results-section .section-index { color:#91e4d7; }
+  .results-section .media-stage { background:rgba(255,255,255,.045); border-color:rgba(216,241,244,.18); box-shadow:0 28px 70px rgba(0,0,0,.23); }
+  .results-section .media-stage img { background:#f7fafb; }
+  .footer { background:#071827 !important; color:#9aaebe; padding:45px 0 56px !important; }
+  .footer-inner { display:grid; grid-template-columns:130px 1fr; gap:55px; align-items:start; }
+  .footer-brand { color:#e8f8fa; font:800 24px 'Manrope',sans-serif; letter-spacing:-.05em; }
+  .footer .content { font-size:12.5px; line-height:1.85; color:#9aaebe; max-width:820px; }
+  .footer .content p { margin:0; }
+  .footer a { color:#c1e6e4; text-underline-offset:3px; }
+  .footer a:hover { color:white; }
+  @media (max-width: 1024px) {
+    .site-width { width: min(var(--container), calc(100% - 56px)); }
+    .hero-content { grid-template-columns:1fr 1fr; gap:30px; padding-block:76px 84px; }
+    .hero-copy h1 { font-size:clamp(33px,4.35vw,48px); }
+    .feature-grid, .feature-grid.figure-left { grid-template-columns:1fr; }
+    .feature-grid.figure-left .figure-col { order:initial; }
+    .feature-grid .prose { max-width:900px; }
+    .comparison-layout { grid-template-columns:1.2fr .8fr; }
+  }
+  @media (max-width: 720px) {
+    html { scroll-padding-top:25px; }
+    .site-width { width:calc(100% - 34px); }
+    .nav-inner { min-height:70px; flex-wrap:wrap; padding-block:18px; gap:15px; }
+    .brand { font-size:20px; }
+    .nav-links { gap:14px; flex-wrap:wrap; justify-content:flex-start; }
+    .nav-links a { font-size:10px; }
+    .nav-links .nav-outline { padding:6px 11px; }
+    .hero-content { grid-template-columns:1fr; padding-block:65px 70px; gap:40px; }
+    .hero-copy h1 { font-size:clamp(35px,9vw,47px); }
+    .hero-intro { font-size:14.5px; line-height:1.75; }
+    .hero-visual { transform:none; }
+    .section-head { margin-bottom:24px; }
+    .section-title { font-size:clamp(26px,6.5vw,34px); }
+    .block-section { padding:66px 0; }
+    .prose,.abstract-prose,.feature-grid .prose { font-size:14.5px; line-height:1.9; }
+    .paper-frame { border-radius:17px; padding:11px; }
+    .media-stage { border-radius:17px; padding:9px; }
+    .video-box { border-radius:14px; }
+    .comparison-layout { grid-template-columns:1fr; gap:22px; }
+    .footer-inner { grid-template-columns:1fr; gap:15px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior:auto; }
+    *,*::before,*::after { transition:none!important; animation:none!important; }
+  }
+</style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
@@ -85,321 +210,138 @@
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   
 
+
 </head>
-
 <body>
-
-
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Demonstration-Guided Grasp Adaptation for Human-to-Robot Handovers</h1>
-            <!-- <div class="is-size-5 publication-authors"> -->
-              <!-- Paper authors
-              <span class="author-block">
-               <a href="https://scholar.google.com/citations?view_op=list_works&hl=zh-CN&user=J_kJRTgAAAAJ&gmla=AH8HC4wWTwnaBLApbCD6uS8sTqfTOxo6xlUgqE87BCgBim4S44lWJkAMtchRhDkqI4fhY7xJBO_gKU7ZnP_tcdsgWMjsaOsEkkhJZnWMt-U" target="_blank"> Yuekun Wu</a><sup>1</sup>,
-              <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=xPEdLeoAAAAJ&hl=en" target="_blank">Yik Lung Pang</a><sup>1</sup>,
-              <span class="author-block">
-                <a href="https://people.epfl.ch/andrea.cavallaro?lang=en" target="_blank">Andrea Cavallaro</a><sup>2,3</sup>,
-              </span>
-              <span class="author-block">
-                <a href="http://eecs.qmul.ac.uk/~coh/" target="_blank">Changjae Oh</a><sup>1</sup>,
-              </span>       
-            </div> -->
-
-            <!-- <div class="is-size-5 publication-authors">
-              <span class="author-block">Queen Mary University of London, UK
-            </div> -->
-            <!-- <div class="is-size-5 publication-authors">
-              <span class="author-block">Queen Mary University of London<sup>1</sup>
-                <br>Idiap Research Institute<sup>2</sup></span>
-                <br>École Polytechnique Fédérale de Lausanne<sup>3</sup></span>
-            </div> -->
-
-            <div class="column has-text-centered">
-              <div class="publication-links">
-
-                <!-- Arxiv PDF link -->
-                <!-- <span class="link-block">
-                  <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper
-                    </span>
-                  </a>
-                </span> -->
-
-                <!-- Supplementary PDF link -->
-                <!-- <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span> -->
-
-                <!-- Github link -->
-                <!-- <span class="link-block">
-                  <a href="" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span> -->
-
-                <!-- ArXiv abstract Link -->
-                <!-- <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span> -->
-              </div>
-            </div>
-          </div>
+  <header class="masthead" id="top">
+    <div class="topbar">
+      <nav class="nav-inner site-width" aria-label="Main navigation">
+        <a href="#top" class="brand" aria-label="HARP home">HARP<span class="brand-dot">.</span></a>
+        <div class="nav-links">
+          <a href="#abstract">ABSTRACT</a>
+          <a href="#method">METHOD</a>
+          <a href="#experiments">EXPERIMENTS</a>
+          <a href="#results" class="nav-outline">RESULTS <span aria-hidden="true">↗</span></a>
+        </div>
+      </nav>
+    </div>
+    <div class="hero-content site-width">
+      <div class="hero-copy">
+        <div class="eyebrow">Human–Robot Interaction · Research</div>
+        <h1>Demonstration-Guided Grasp Adaptation for Human-to-Robot Handovers</h1>
+        <p class="hero-intro">we present a method that collects human-demonstrated grasps for H2R handovers by instructing humans to naturally hand objects to a stationary robot gripper and adapt a grasp gener- ation method to produce grasps aligned with human handover demonstrations.</p>
+        <div class="hero-rule" aria-hidden="true"></div>
+      </div>
+      <div class="hero-visual">
+        <div class="visual-shell">
+          <div class="visual-top" aria-hidden="true"><i></i><i></i><i></i><span>HARP / Overview</span></div>
+          <img class="hero-gif" src="./videos/video-all.gif" alt="Comparison Video" fetchpriority="high">
+          <div class="shell-caption">Demonstration-Guided Grasp Adaptation</div>
         </div>
       </div>
     </div>
-  </section>
-
-
-  <!-- Teaser video-->
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-
-        <div class="hero-body" style="display: flex; justify-content: center; margin-top: 20px;">
-          <img 
-            src="./videos/video-all.gif" 
-            style="width: 100%; max-width: 900px; border-radius: 10px;"
-            alt="Comparison Video">
+  </header>
+  <main class="page-content">
+    <section class="block-section section-white" id="abstract" aria-labelledby="abstract-title">
+      <div class="site-width">
+        <div class="section-head">
+          <div class="section-index">01 / PAPER ABSTRACT</div>
+          <h2 class="section-title" id="abstract-title">Abstract</h2>
         </div>
-
-        
-
-        <h2 class="subtitle has-text-centered">
-          we present a method that collects human-demonstrated grasps for H2R handovers by instructing humans to naturally hand objects to a stationary robot gripper and adapt a grasp gener- ation method to produce grasps aligned with human handover demonstrations. 
-        </h2>
-      </div>
-    </div>
-  </section>
-  <!-- End teaser video -->
-
-
-
-  <!-- Paper abstract -->
-  <section class="section hero section-alt-1">
-  <!-- <section class="section hero is-light"> -->
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3 has-text-centered">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>
-              Existing human-to-robot (H2R) handover approaches extend object-centric grasping through various strategies to ensure human safety. However, they often neglect the influence of the giver’s object presentation on grasp-region suitability, potentially resulting in unsuccessful or unstable robot grasps. Addressing this problem through H2R handover data collection in the real world is costly, time-consuming, and potentially unsafe to humans. To address these challenges, we present a method that collects human-demonstrated grasps for H2R handovers by instructing humans to naturally hand objects to a stationary robot gripper and adapt a grasp generation method to produce grasps aligned with human handover demonstrations. Our data collection method enables rapid and safe collection of H2R handover demonstrations. Building on the collected demonstrations, we present a lightweight per-object grasp adaptation model that jointly models the human hand and object to generate grasps from just two minutes of training per object. Our method can be integrated into existing H2R handover frameworks, requiring only the hand pointcloud and the textured object mesh as input. Experiments demonstrate improved grasp success, strong alignment with human demonstrations, higher human perceptual scores for grasping naturalness and safety, and effective adaptation on objects with challenging geometries in real-world H2R handovers.
-            </p>
-          </div>
-          <div class="columns is-centered">
-            <img src="static/images/abs.png" alt="Overview of the proposed method" width="100%" class="center-image" />
-          </div>
-          <div>
-          </div>
+        <div class="prose abstract-prose"><p>Existing human-to-robot (H2R) handover approaches extend object-centric grasping through various strategies to ensure human safety. However, they often neglect the influence of the giver’s object presentation on grasp-region suitability, potentially resulting in unsuccessful or unstable robot grasps. Addressing this problem through H2R handover data collection in the real world is costly, time-consuming, and potentially unsafe to humans. To address these challenges, we present a method that collects human-demonstrated grasps for H2R handovers by instructing humans to naturally hand objects to a stationary robot gripper and adapt a grasp generation method to produce grasps aligned with human handover demonstrations. Our data collection method enables rapid and safe collection of H2R handover demonstrations. Building on the collected demonstrations, we present a lightweight per-object grasp adaptation model that jointly models the human hand and object to generate grasps from just two minutes of training per object. Our method can be integrated into existing H2R handover frameworks, requiring only the hand pointcloud and the textured object mesh as input. Experiments demonstrate improved grasp success, strong alignment with human demonstrations, higher human perceptual scores for grasping naturalness and safety, and effective adaptation on objects with challenging geometries in real-world H2R handovers.</p></div>
+        <div class="paper-frame large-figure">
+          <img src="static/images/abs.png" alt="Overview of the proposed method" loading="lazy">
         </div>
       </div>
-    </div>
-  </section>
-  <!-- End paper abstract -->
+    </section>
 
-
-  <section class="section is-small section-alt-2">
-  <!-- <section class="section is-small"> -->
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-full">
-          <h2 class="title is-3">Video Summary</h2>
-  
-          <div style="width: 100%; margin-top: 20px;">
-            <div style="position: relative; width: 100%; aspect-ratio: 16 / 9;">
-              <iframe 
-                src="https://www.youtube.com/embed/HFIqaegTvT4"
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: none;"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-              </iframe>
-            </div>
-          </div>
-  
+    <section class="block-section video-section" id="video" aria-labelledby="video-title">
+      <div class="site-width">
+        <div class="section-head">
+          <div class="section-index">02 / VIDEO</div>
+          <h2 class="section-title" id="video-title">Video Summary</h2>
+        </div>
+        <div class="video-box">
+          <iframe src="https://www.youtube.com/embed/HFIqaegTvT4" title="Video Summary" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
         </div>
       </div>
-  </section>
+    </section>
 
-  <section class="section is-small">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-full">
-          <div class="content">
-            <h2 class="title is-3">HARP Pipeline</h2>
-            <div class="level-set has-text-justified">
-              <p>
-                Overview of our motion-free data collection and handover grasp generation. (a) In the offline stage, reference RGB-D images are used to reconstruct a textured object mesh via BundleSDF. 
-              In the online stage, a human naturally hands the object to a stationary robot while a fixed side-mounted RGB-D camera captures the process. 
-              Note that the robot arm remains stationary.
-              Hand and object masks are extracted, the hand pointcloud is reconstructed, and the object pose is estimated using FoundationPose. The gripper pose and hand pointcloud are then transformed into the object coordinate frame. Finally, we obtain the demonstrated grasp pose label and corresponding hand pointcloud in real-time. (b) We then present a grasp adaptation model that encodes the hand pointcloud \(P_h\) and object mesh \(M_o\) using PointNet and a mlp layer. The grasp candidates are generated by 6-DoF GraspNet and encodes by a mlp layer. A Hand Proximity Prior (HPP) models the spatial relationship between the hand and each grasp candidate. All features are then fused to predict a score for each grasp candidate, and the highest-scoring grasp is selected for the handover task.
-              </p>
-            </div>
+    <section class="block-section section-white" id="method" aria-labelledby="method-title">
+      <div class="site-width">
+        <div class="section-head">
+          <div class="section-index">03 / METHODOLOGY</div>
+          <h2 class="section-title" id="method-title">HARP Pipeline</h2>
+        </div>
+        <div class="prose"><p>Overview of our motion-free data collection and handover grasp generation. (a) In the offline stage, reference RGB-D images are used to reconstruct a textured object mesh via BundleSDF. In the online stage, a human naturally hands the object to a stationary robot while a fixed side-mounted RGB-D camera captures the process. Note that the robot arm remains stationary. Hand and object masks are extracted, the hand pointcloud is reconstructed, and the object pose is estimated using FoundationPose. The gripper pose and hand pointcloud are then transformed into the object coordinate frame. Finally, we obtain the demonstrated grasp pose label and corresponding hand pointcloud in real-time. (b) We then present a grasp adaptation model that encodes the hand pointcloud \(P_h\) and object mesh \(M_o\) using PointNet and a mlp layer. The grasp candidates are generated by 6-DoF GraspNet and encodes by a mlp layer. A Hand Proximity Prior (HPP) models the spatial relationship between the hand and each grasp candidate. All features are then fused to predict a score for each grasp candidate, and the highest-scoring grasp is selected for the handover task.</p></div>
+        <div class="paper-frame large-figure">
+          <img src="static/images/overview.png" alt="Method overview" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="block-section section-blue" id="handover" aria-labelledby="handover-title">
+      <div class="site-width">
+        <div class="section-head">
+          <div class="section-index">04 / INTEGRATION</div>
+          <h2 class="section-title" id="handover-title">Human-to-robot handover pipeline integrated with HARP.</h2>
+        </div>
+        <div class="prose"><p>A fixed RGB-D camera captures the approaching scene, and we extract hand–object masks. The object pose \(T_{obj}^{cam}\) is estimated using FoundationPose and the hand pointcloud \(P_{h}^{o}\) is reconstructed from the depth image and transformed to the object coordinate. HARP use the hand pointcloud and pre-prepared object mesh to predict the grasp pose \(G\). The grasp pose \(G\) is transformed to robot base coordinate with object pose \(T_{obj}^{cam}\) and camera extrinsics \(T_{cam}^{rob}\). The robot use the grasp pose \(G^{'}\) and moves to a pre-grasp pose and performs closed-loop grasping before delivering the object to a predefined location.</p></div>
+        <div class="paper-frame large-figure">
+          <img src="static/images/h2rpipeline.png" alt="Method overview" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="block-section section-white" id="experiments" aria-labelledby="setup-title">
+      <div class="site-width">
+        <div class="section-head">
+          <div class="section-index">05 / EXPERIMENTAL PLATFORM</div>
+          <h2 class="section-title" id="setup-title">Robot Setup</h2>
+        </div>
+        <div class="prose"><p>For real-robot experiments, we use a UR5 robotic arm with Robotiq 2F-85 2-finger gripper and a side-mounted Intel Realsense D435i camera, and a participant holding a object (left). To evaluate the model's performance, we use 9 adapted objects including objects with strong functional grasp affordances, objects difficult to grasp, and more common objects in real-robot handover experiments (right).</p></div>
+        <div class="paper-frame large-figure">
+          <img src="static/images/setup.png" alt="Robot setup" loading="lazy" style="width:min(100%,850px); margin-inline:auto;">
+        </div>
+      </div>
+    </section>
+
+    <section class="block-section section-soft" id="comparison" aria-labelledby="comparison-title">
+      <div class="site-width">
+        <div class="section-head">
+          <div class="section-index">06 / BASELINE EVALUATION</div>
+          <h2 class="section-title" id="comparison-title">Comparison with Baseline (Playback at 2× Speed)</h2>
+        </div>
+        <div class="prose"><p>We compare HARP against a widely used grasping method for human-to-robot handover, referred to as <b>GraspNet-CF</b>, which combines a 6-DoF object-centric grasping network with a collision-free filtering strategy. The evaluation is conducted under the same handover pipeline, where only the grasp adaptation module is replaced.</p></div>
+        <div class="comparison-layout">
+          <div class="media-stage">
+            <img src="./videos/video-compare.gif" alt="Comparison Video" loading="lazy">
           </div>
-          <div class="columns is-centered">
-            <img src="static/images/overview.png" alt="Method overview" width="100%" class="center-image" />
+          <div class="media-stage">
+            <img id="compareImg" class="hoverable" src="static/images/compare1.png" alt="Comparison" tabindex="0" loading="lazy">
+            <p class="click-caption">Click image to switch comparison</p>
           </div>
         </div>
       </div>
-  </section>
+    </section>
 
-  <section class="section is-small section-alt-3">
-  <!-- <section class="section is-small"> -->
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-full">
-          <div class="content">
-            <h2 class="title is-3">Human-to-robot handover pipeline integrated with HARP.</h2>
-            <div class="level-set has-text-justified">
-              <p>
-                A fixed RGB-D camera captures the approaching scene, and we extract hand–object masks.
-                The object pose \(T_{obj}^{cam}\) is estimated using FoundationPose and the hand pointcloud \(P_{h}^{o}\) is reconstructed from the depth image and transformed to the object coordinate.
-                HARP use the hand pointcloud and pre-prepared object mesh to predict the grasp pose \(G\). The grasp pose \(G\) is transformed to robot base coordinate with object pose \(T_{obj}^{cam}\) and camera extrinsics \(T_{cam}^{rob}\).
-                The robot use the grasp pose \(G^{'}\) and moves to a pre-grasp pose and performs closed-loop grasping before delivering the object to a predefined location.
-              </p>
-            </div>
-          </div>
-          <div class="columns is-centered">
-            <img src="static/images/h2rpipeline.png" alt="Method overview" width="100%" class="center-image" />
-          </div>
+    <section class="block-section results-section" id="results" aria-labelledby="results-title">
+      <div class="site-width">
+        <div class="section-head">
+          <div class="section-index">07 / REAL-ROBOT RESULTS</div>
+          <h2 class="section-title" id="results-title">Human-to-robot handover results (proposed method, 2× speed)</h2>
+        </div>
+        <div class="media-stage">
+          <img src="./videos/video-all.gif" alt="Comparison Video" loading="lazy">
         </div>
       </div>
-  </section>
-
-  <section class="section is-small section-alt-3">
-  <!-- <section class="hero section is-small is-light"> -->
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-full">
-          <div class="content">
-            <h2 class="title is-3">Robot Setup</h2>
-            <div class="level-set has-text-justified">
-              <p>
-              For real-robot experiments, we use a UR5 robotic arm with Robotiq 2F-85 2-finger gripper and a side-mounted Intel Realsense D435i camera, and a participant holding a object (left). To evaluate the model's performance, we use 9 adapted objects including objects with strong functional grasp affordances, objects difficult to grasp, and more common objects in real-robot handover experiments (right).
-               
-              </p>
-            </div>
-          </div>
-          <div class="columns is-centered">
-            <img src="static/images/setup.png" alt="Robot setup" width="50%" class="center-image" />
-          </div>
-        </div>
-      </div>
-  </section>
-
-
-
-  <section class="section section-alt-2">
-  <!-- <section class="section">  -->
-    <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full">
-        <div class="content">
-          <h2 class="title is-3">Comparison with Baseline (Playback at 2× Speed)</h2>
-          <div class="level-set has-text-justified">
-            <p>
-              We compare HARP against a widely used grasping method for human-to-robot handover,
-              referred to as <b>GraspNet-CF</b>, which combines a 6-DoF object-centric grasping network
-              with a collision-free filtering strategy. The evaluation is conducted under the same
-              handover pipeline, where only the grasp adaptation module is replaced.
-            </p>
-          </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 30px;">
-          <img 
-            src="./videos/video-compare.gif" 
-            style="width: 100%; border-radius: 12px;"
-            alt="Comparison Video">
-        </div>
-
-        <div class="columns is-centered" style="margin-top: 30px;">
-          <div class="column is-half"> <img id="compareImg"
-                 src="static/images/compare1.png"
-                 alt="Comparison"
-                 style="cursor: pointer; border-radius: 10px; width: 100%;" />
-            <p style="font-size:14px; margin-top:10px; color: #888;">
-              Click image to switch comparison
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
- 
-
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        
-        <h2 class="title is-3">Human-to-robot handover results (proposed method, 2× speed)</h2>
-  
-        <div class="hero-body" style="display: flex; justify-content: center; margin-top: 20px;">
-          <img 
-            src="./videos/video-all.gif" 
-            style="width: 100%; max-width: 900px; border-radius: 10px;"
-            alt="Comparison Video">
-        </div>
-  
-      </div>
-    </div>
-  </section>
-
-  
-
+    </section>
+  </main>
   <footer class="footer">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content">
-
-            <p>
-              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
-                target="_blank">Academic Project Page Template</a> which was adopted from the <a
-                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-              You are free to borrow the source code of this website, we just ask that you link back to this page in the
-              footer. <br> This website is licensed under a <a rel="license"
-                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-                Commons Attribution-ShareAlike 4.0 International License</a>.
-            </p>
-
-          </div>
-        </div>
-      </div>
+    <div class="site-width footer-inner">
+      <div class="footer-brand">HARP<span class="brand-dot">.</span></div>
+      <div class="content"><p>This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page. You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br/> This website is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p></div>
     </div>
   </footer>
-
-  <!-- Statcounter tracking code -->
-
-  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-  <!-- End of Statcounter Code -->
-
 </body>
-
 </html>

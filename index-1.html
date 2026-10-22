@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="Demonstration-Guided Grasp Adaptation for Human-to-Robot Handovers" />
+  <meta property="og:description" content="HARP: a human-centric and function-aware grasp adaptation framework for human-to-robot handover, which does not require robot motion during training." />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="human-robot interaction, handover, hand-object reconstruction">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Human-Centric and Function-Aware Grasp Adaptation for Human-to-Robot Handover</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <style>
+    /* ===== 背景分区 ===== */
+    .section-alt-1 {
+      background-color: #fafafa;
+    }
+
+    .section-alt-2 {
+      background-color: #f7f9fc;
+    }
+
+    .section-alt-3 {
+      background-color: #f9f8ff;
+    }
+
+    /* ===== 卡片效果 ===== */
+    .card-like {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    }
+
+    /* ===== 间距优化 ===== */
+    .section {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    /* ===== 图片微动效 ===== */
+    img {
+      transition: transform 0.2s ease;
+    }
+
+    img:hover {
+      transform: scale(1.01);
+    }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Demonstration-Guided Grasp Adaptation for Human-to-Robot Handovers</h1>
+            <!-- <div class="is-size-5 publication-authors"> -->
+              <!-- Paper authors
+              <span class="author-block">
+               <a href="https://scholar.google.com/citations?view_op=list_works&hl=zh-CN&user=J_kJRTgAAAAJ&gmla=AH8HC4wWTwnaBLApbCD6uS8sTqfTOxo6xlUgqE87BCgBim4S44lWJkAMtchRhDkqI4fhY7xJBO_gKU7ZnP_tcdsgWMjsaOsEkkhJZnWMt-U" target="_blank"> Yuekun Wu</a><sup>1</sup>,
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=xPEdLeoAAAAJ&hl=en" target="_blank">Yik Lung Pang</a><sup>1</sup>,
+              <span class="author-block">
+                <a href="https://people.epfl.ch/andrea.cavallaro?lang=en" target="_blank">Andrea Cavallaro</a><sup>2,3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="http://eecs.qmul.ac.uk/~coh/" target="_blank">Changjae Oh</a><sup>1</sup>,
+              </span>       
+            </div> -->
+
+            <!-- <div class="is-size-5 publication-authors">
+              <span class="author-block">Queen Mary University of London, UK
+            </div> -->
+            <!-- <div class="is-size-5 publication-authors">
+              <span class="author-block">Queen Mary University of London<sup>1</sup>
+                <br>Idiap Research Institute<sup>2</sup></span>
+                <br>École Polytechnique Fédérale de Lausanne<sup>3</sup></span>
+            </div> -->
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+
+                <!-- Arxiv PDF link -->
+                <!-- <span class="link-block">
+                  <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper
+                    </span>
+                  </a>
+                </span> -->
+
+                <!-- Supplementary PDF link -->
+                <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                <!-- Github link -->
+                <!-- <span class="link-block">
+                  <a href="" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span> -->
+
+                <!-- ArXiv abstract Link -->
+                <!-- <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Teaser video-->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+
+        <div class="hero-body" style="display: flex; justify-content: center; margin-top: 20px;">
+          <img 
+            src="./videos/video-all.gif" 
+            style="width: 100%; max-width: 900px; border-radius: 10px;"
+            alt="Comparison Video">
+        </div>
+
+        
+
+        <h2 class="subtitle has-text-centered">
+          we present a method that collects human-demonstrated grasps for H2R handovers by instructing humans to naturally hand objects to a stationary robot gripper and adapt a grasp gener- ation method to produce grasps aligned with human handover demonstrations. 
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+
+
+  <!-- Paper abstract -->
+  <section class="section hero section-alt-1">
+  <!-- <section class="section hero is-light"> -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Existing human-to-robot (H2R) handover approaches extend object-centric grasping through various strategies to ensure human safety. However, they often neglect the influence of the giver’s object presentation on grasp-region suitability, potentially resulting in unsuccessful or unstable robot grasps. Addressing this problem through H2R handover data collection in the real world is costly, time-consuming, and potentially unsafe to humans. To address these challenges, we present a method that collects human-demonstrated grasps for H2R handovers by instructing humans to naturally hand objects to a stationary robot gripper and adapt a grasp generation method to produce grasps aligned with human handover demonstrations. Our data collection method enables rapid and safe collection of H2R handover demonstrations. Building on the collected demonstrations, we present a lightweight per-object grasp adaptation model that jointly models the human hand and object to generate grasps from just two minutes of training per object. Our method can be integrated into existing H2R handover frameworks, requiring only the hand pointcloud and the textured object mesh as input. Experiments demonstrate improved grasp success, strong alignment with human demonstrations, higher human perceptual scores for grasping naturalness and safety, and effective adaptation on objects with challenging geometries in real-world H2R handovers.
+            </p>
+          </div>
+          <div class="columns is-centered">
+            <img src="static/images/abs.png" alt="Overview of the proposed method" width="100%" class="center-image" />
+          </div>
+          <div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+
+  <section class="section is-small section-alt-2">
+  <!-- <section class="section is-small"> -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <h2 class="title is-3">Video Summary</h2>
+  
+          <div style="width: 100%; margin-top: 20px;">
+            <div style="position: relative; width: 100%; aspect-ratio: 16 / 9;">
+              <iframe 
+                src="https://www.youtube.com/embed/HFIqaegTvT4"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: none;"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+  </section>
+
+  <section class="section is-small">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <div class="content">
+            <h2 class="title is-3">HARP Pipeline</h2>
+            <div class="level-set has-text-justified">
+              <p>
+                Overview of our motion-free data collection and handover grasp generation. (a) In the offline stage, reference RGB-D images are used to reconstruct a textured object mesh via BundleSDF. 
+              In the online stage, a human naturally hands the object to a stationary robot while a fixed side-mounted RGB-D camera captures the process. 
+              Note that the robot arm remains stationary.
+              Hand and object masks are extracted, the hand pointcloud is reconstructed, and the object pose is estimated using FoundationPose. The gripper pose and hand pointcloud are then transformed into the object coordinate frame. Finally, we obtain the demonstrated grasp pose label and corresponding hand pointcloud in real-time. (b) We then present a grasp adaptation model that encodes the hand pointcloud \(P_h\) and object mesh \(M_o\) using PointNet and a mlp layer. The grasp candidates are generated by 6-DoF GraspNet and encodes by a mlp layer. A Hand Proximity Prior (HPP) models the spatial relationship between the hand and each grasp candidate. All features are then fused to predict a score for each grasp candidate, and the highest-scoring grasp is selected for the handover task.
+              </p>
+            </div>
+          </div>
+          <div class="columns is-centered">
+            <img src="static/images/overview.png" alt="Method overview" width="100%" class="center-image" />
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section class="section is-small section-alt-3">
+  <!-- <section class="section is-small"> -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <div class="content">
+            <h2 class="title is-3">Human-to-robot handover pipeline integrated with HARP.</h2>
+            <div class="level-set has-text-justified">
+              <p>
+                A fixed RGB-D camera captures the approaching scene, and we extract hand–object masks.
+                The object pose \(T_{obj}^{cam}\) is estimated using FoundationPose and the hand pointcloud \(P_{h}^{o}\) is reconstructed from the depth image and transformed to the object coordinate.
+                HARP use the hand pointcloud and pre-prepared object mesh to predict the grasp pose \(G\). The grasp pose \(G\) is transformed to robot base coordinate with object pose \(T_{obj}^{cam}\) and camera extrinsics \(T_{cam}^{rob}\).
+                The robot use the grasp pose \(G^{'}\) and moves to a pre-grasp pose and performs closed-loop grasping before delivering the object to a predefined location.
+              </p>
+            </div>
+          </div>
+          <div class="columns is-centered">
+            <img src="static/images/h2rpipeline.png" alt="Method overview" width="100%" class="center-image" />
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section class="section is-small section-alt-3">
+  <!-- <section class="hero section is-small is-light"> -->
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <div class="content">
+            <h2 class="title is-3">Robot Setup</h2>
+            <div class="level-set has-text-justified">
+              <p>
+              For real-robot experiments, we use a UR5 robotic arm with Robotiq 2F-85 2-finger gripper and a side-mounted Intel Realsense D435i camera, and a participant holding a object (left). To evaluate the model's performance, we use 9 adapted objects including objects with strong functional grasp affordances, objects difficult to grasp, and more common objects in real-robot handover experiments (right).
+               
+              </p>
+            </div>
+          </div>
+          <div class="columns is-centered">
+            <img src="static/images/setup.png" alt="Robot setup" width="50%" class="center-image" />
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+
+  <section class="section section-alt-2">
+  <!-- <section class="section">  -->
+    <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <div class="content">
+          <h2 class="title is-3">Comparison with Baseline (Playback at 2× Speed)</h2>
+          <div class="level-set has-text-justified">
+            <p>
+              We compare HARP against a widely used grasping method for human-to-robot handover,
+              referred to as <b>GraspNet-CF</b>, which combines a 6-DoF object-centric grasping network
+              with a collision-free filtering strategy. The evaluation is conducted under the same
+              handover pipeline, where only the grasp adaptation module is replaced.
+            </p>
+          </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+          <img 
+            src="./videos/video-compare.gif" 
+            style="width: 100%; border-radius: 12px;"
+            alt="Comparison Video">
+        </div>
+
+        <div class="columns is-centered" style="margin-top: 30px;">
+          <div class="column is-half"> <img id="compareImg"
+                 src="static/images/compare1.png"
+                 alt="Comparison"
+                 style="cursor: pointer; border-radius: 10px; width: 100%;" />
+            <p style="font-size:14px; margin-top:10px; color: #888;">
+              Click image to switch comparison
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+ 
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        
+        <h2 class="title is-3">Human-to-robot handover results (proposed method, 2× speed)</h2>
+  
+        <div class="hero-body" style="display: flex; justify-content: center; margin-top: 20px;">
+          <img 
+            src="./videos/video-all.gif" 
+            style="width: 100%; max-width: 900px; border-radius: 10px;"
+            alt="Comparison Video">
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the
+              footer. <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
